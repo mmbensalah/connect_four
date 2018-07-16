@@ -3,16 +3,11 @@ require 'pry'
 
 class Computer
   def initialize
-    @original_board =[["A", ".", ".", ".", ".", ".", "."],
-                      ["B", ".", ".", ".", ".", ".", "."],
-                      ["C", ".", ".", ".", ".", ".", "."],
-                      ["D", ".", ".", ".", ".", ".", "."],
-                      ["E", ".", ".", ".", ".", ".", "."],
-                      ["F", ".", ".", ".", ".", ".", "."],
-                      ["G", ".", ".", ".", ".", ".", "."]]
+    @original_board = original_board
   end
 
-  def comp_makes_a_move #output of this method is modified board
+  def comp_makes_a_move
+    #output of this method is modified board
     #move_array will = an array i.e. ["A", ".", etc]
     @original_board.sample.reverse.find do |index|
       if index == "."
@@ -21,4 +16,5 @@ class Computer
     end
     return @original_board
   end
+
 end

@@ -3,14 +3,18 @@ require './lib/computer'
 
 
 
-def play
+def start_game
   newgame = GameBoard.new
-  computer = Computer.new
   puts newgame.display
-  puts computer.comp_makes_a_move
 end
 
-puts play
+def play_game
+  computer = Computer.new
+  computer.comp_makes_a_move
+end
+
+puts start_game
+puts play_game
 # array = Array.new(5) {Array.new(10, .)}
 #
 # array.each { |x| puts x.join (" ")}
