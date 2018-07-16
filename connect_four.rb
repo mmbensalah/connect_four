@@ -1,8 +1,16 @@
-require './lib/board_class'
+require './lib/board'
+require './lib/computer'
 
-newgame = GameBoard.new
-newgame.display
 
+
+def play
+  newgame = GameBoard.new
+  computer = Computer.new
+  puts newgame.display
+  puts computer.comp_makes_a_move
+end
+
+puts play
 # array = Array.new(5) {Array.new(10, .)}
 #
 # array.each { |x| puts x.join (" ")}
