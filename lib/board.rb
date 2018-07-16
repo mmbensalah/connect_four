@@ -20,4 +20,10 @@ class GameBoard
     puts @welcome_message
   end
 
+  def format_it
+    @original_board.transpose.each do |r|
+      puts r.each { |p| p }.join(" ")
+    end
+  end
+
 end

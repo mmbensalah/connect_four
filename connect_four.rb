@@ -1,29 +1,46 @@
 require './lib/board'
-require './lib/computer'
-
-
+require './lib/player'
+# require './lib/computer'
 
 def start_game
-  newgame = GameBoard.new
-  puts newgame.display
+  board = GameBoard.new
+  board.display
+  player = Player.new(board)
+  player_input = player.input_move #B
+  row = player.player_move_index(player_input)#["B", ".", ".", ".", ".", ".", "."]
+  updated_row = player.update_row(row)
+  final_board = player.update_board(updated_row)
+  puts final_board.format_it #whole board updated
 end
 
-def play_game
-  computer = Computer.new
-  computer.comp_makes_a_move
-end
 
-puts start_game
-puts play_game
-# array = Array.new(5) {Array.new(10, .)}
+# def player_move
+#   #B
 #
-# array.each { |x| puts x.join (" ")}
+# end
 
-# my_table = {
-#   "line0" = ["A", "B", "C", "D", "E", "F", "G"],
-#   line1: ["1", "2", "3", "4", "5", "6", "7"],
-#   line2: ["1", "2", "3", "4", "5", "6", "7"],
-#   line3: ["1", "2", "3", "4", "5", "6", "7"],
+
+start_game
+# player_move
+
+
+
+# def play_game
+#   computer = Computer.new
+#   computer.comp_makes_a_move
+# end
+
+# puts start_game
+# puts play_game
+# # array = Array.new(5) {Array.new(10, .)}
+# #
+# # array.each { |x| puts x.join (" ")}
+#
+# # my_table = {
+# #   "line0" = ["A", "B", "C", "D", "E", "F", "G"],
+# #   line1: ["1", "2", "3", "4", "5", "6", "7"],
+# #   line2: ["1", "2", "3", "4", "5", "6", "7"],
+# #   line3: ["1", "2", "3", "4", "5", "6", "7"],
 #   line4: ["1", "2", "3", "4", "5", "6", "7"],
 #   line5: ["1", "2", "3", "4", "5", "6", "7"],
 #   line6: ["1", "2", "3", "4", "5", "6", "7"]
