@@ -10,7 +10,7 @@ def start_game
   row = player.player_move_index(player_input)#["B", ".", ".", ".", ".", ".", "."]
   updated_row = player.update_row(row)
   final_board = player.update_board(updated_row)
-  puts final_board.format_it #whole board updated
+  formatted_board = player.format_updated_board#whole board updated
 end
 
 

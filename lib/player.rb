@@ -39,7 +39,12 @@ class Player
         element
       end
     end
-    @board.original_board
+  end
+
+  def format_updated_board
+    @board.original_board.transpose.each do |r|
+      puts r.each { |p| p }.join(" ")
+    end
   end
 
 end
