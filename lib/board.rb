@@ -12,12 +12,14 @@ class GameBoard
                       ["F", ".", ".", ".", ".", ".", "."],
                       ["G", ".", ".", ".", ".", ".", "."]]
   end
+  def message
+    puts @welcome_message
+  end
 
-  def display
+  def format_it
     @original_board.transpose.each do |r|
       puts r.each { |p| p }.join(" ")
     end
-    puts @welcome_message
   end
 
 end
