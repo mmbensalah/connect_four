@@ -1,20 +1,30 @@
 require './lib/board'
+require './lib/player'
+
 require 'pry'
 
 class Computer
-  def initialize
-    @original_board = original_board
+  attr_reader :board
+
+  def initialize(board)
+    @board = board
   end
 
   def comp_makes_a_move
+
     #output of this method is modified board
     #move_array will = an array i.e. ["A", ".", etc]
-    @original_board.sample.reverse.find do |index|
+    @board.sample.reverse.find do |index|
       if index == "."
-      index.replace("X")
+      index.replace("O")
       end
     end
-    return @original_board
   end
 
-end
+  def format_board
+    @board.each do |space|
+      puts space.each { |x| x }.join(" ")
+    end
+  end
+
+  end

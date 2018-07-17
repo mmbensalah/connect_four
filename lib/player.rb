@@ -1,5 +1,6 @@
 require './lib/board'
-# require './lib/computer'
+require './lib/computer'
+
 require 'pry'
 
 class Player
@@ -11,7 +12,7 @@ class Player
   end
 
   def input_move #input_move is "B" i.e.
-    puts "Input a letter A - G to make a move."
+    puts "Input a capital letter A - G to make a move."
     @player_move = gets.chomp
   end
 
@@ -37,14 +38,13 @@ class Player
         element = row
       else
         element
-      end
     end
+  end
   end
 
   def format_updated_board
-    @board.original_board.transpose.each do |r|
-      puts r.each { |p| p }.join(" ")
-    end
+    @board.original_board.transpose.each do |space|
+      puts space.each { |x| x }.join(" ")
+      end
   end
-
 end
