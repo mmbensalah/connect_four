@@ -2,7 +2,7 @@ require './lib/computer'
 
 class GameBoard
   attr_accessor :board
-  def initialize
+  def initialize(board)
     @welcome_message = "Welcome to the game"
     @board =   [["A", ".", ".", ".", ".", ".", "."],
                 ["B", ".", ".", ".", ".", ".", "."],

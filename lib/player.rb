@@ -41,9 +41,9 @@ class Player
   end
   end
 
-  def format_updated_board
-    @board.transpose.each do |space|
-      puts space.each { |x| x }.join(" ")
-      end
-  end
+  # def format_updated_board
+  #   @board.transpose.each do |space|
+  #     puts space.each { |x| x }.join(" ")
+  #     end
+  # end
 end
