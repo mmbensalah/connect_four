@@ -1,6 +1,5 @@
 require './lib/board'
 require './lib/computer'
-
 require 'pry'
 
 class Player
@@ -17,7 +16,7 @@ class Player
   end
 
   def player_move_index(player_move) #player_move_index is index of letter
-    row = @board.original_board.find do |element|
+    row = @board.find do |element|
       element[0] == player_move
     end
     row
@@ -33,7 +32,7 @@ class Player
   end
 
   def update_board(row)
-    @board.original_board.map! do |element|
+    @board.map! do |element|
       if element[0] == row[0]
         element = row
       else
@@ -43,7 +42,7 @@ class Player
   end
 
   def format_updated_board
-    @board.original_board.transpose.each do |space|
+    @board.transpose.each do |space|
       puts space.each { |x| x }.join(" ")
       end
   end

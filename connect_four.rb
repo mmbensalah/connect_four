@@ -5,6 +5,7 @@ require 'pry'
 
 
 class ConnectFour
+
   def initialize
     @board = GameBoard.new
   end
@@ -12,6 +13,11 @@ class ConnectFour
   def display
     @board.message
     @board.format_it
+  end
+
+  def pass_in_board
+    gameboard = GameBoard.new
+    @board = gameboard.board
   end
 
   def start_game_player
@@ -31,24 +37,29 @@ class ConnectFour
     @board = computer_board
   end
 
+  # def space? #false
+  #   @board.any? do |row|
+  #     row.include?(".")
+  #   end
+  # end
 
-# def go_around
-#   5.times do
-#     play_player_and_computer
-#   end
-# end
 
-def play
-  start_game_player
-  continue_game_computer
+
+  # def play
+  #   while space? == true do
+  #     go_around
+  #     end
+  # end
+
 end
 
-
-
-
-end
 
 play = ConnectFour.new
 play.display
-  while
-   play.play
+play.pass_in_board
+play.start_game_player
+play.continue_game_computer
+play.start_game_player
+play.continue_game_computer
+play.start_game_player
+play.continue_game_computer
