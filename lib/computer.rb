@@ -19,12 +19,13 @@ class Computer
       index.replace("O")
       end
     end
+    @board
   end
 
-  def format_board
-    @board.each do |space|
-      puts space.each { |x| x }.join(" ")
-    end
-  end
+  # def format_board
+  #   @board.each do |space|
+  #     puts space.each { |x| x }.join(" ")
+  #   end
+  # end
 
   end
