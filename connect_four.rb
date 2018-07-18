@@ -3,7 +3,6 @@ require './lib/player'
 require './lib/computer'
 require 'pry'
 
-
 class ConnectFour
 
   def initialize
@@ -41,24 +40,58 @@ class ConnectFour
     end
     @board
   end
-end 
-  # def play
-  #   while space? == true do
-  #     go_around
-  #     end
-  # end
+
+  def win_vertical
+    if @board.join.include?("XXXX")
+      puts "WIN"
+    end
+  end
+
+  def win_horizontal
+    if @board.transpose.join.include?("XXXX")
+      puts "WIN"
+    end
+  end
+
+end
+
+
 play = ConnectFour.new
 play.display
 play.pass_in_board
-play.start_game_player
-play.format_it
-play.continue_game_computer
-play.format_it
-play.start_game_player
-play.format_it
-play.continue_game_computer
-play.format_it
-play.start_game_player
-play.format_it
-play.continue_game_computer
-play.format_it
+
+
+10.times do
+   play.start_game_player
+   play.format_it
+   play.continue_game_computer
+   play.format_it
+   play.win_vertical
+   play.win_horizontal
+end
+
+
+
+
+
+# play.start_game_player
+# play.format_it
+#
+# play.continue_game_computer
+# play.format_it
+#
+# play.start_game_player
+# play.format_it
+#
+# play.continue_game_computer
+# play.format_it
+#
+#
+# play.start_game_player
+# play.format_it
+# play.continue_game_computer
+# play.format_it
+# play.start_game_player
+# play.format_it
+# play.continue_game_computer
+# play.format_it

@@ -11,7 +11,6 @@ class Computer
   end
 
   def comp_makes_a_move
-
     #output of this method is modified board
     #move_array will = an array i.e. ["A", ".", etc]
     @board.sample.reverse.find do |index|
@@ -21,11 +20,5 @@ class Computer
     end
     @board
   end
-
-  # def format_board
-  #   @board.each do |space|
-  #     puts space.each { |x| x }.join(" ")
-  #   end
-  # end
 
   end
