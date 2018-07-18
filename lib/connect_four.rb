@@ -35,8 +35,8 @@ class ConnectFour
   end
 
   def format_it
-    @board.transpose.each do |r|
-      puts r.each { |p| p }.join(" ")
+    @board.transpose.each do |row|
+      puts row.each { |p| p }.join(" ")
     end
     @board
   end
@@ -44,54 +44,20 @@ class ConnectFour
   def win_vertical
     if @board.join.include?("XXXX")
       puts "WIN"
+      true
+    elsif @board.join.include?("OOOO")
+      puts "LOSE"
+      true
     end
   end
 
   def win_horizontal
     if @board.transpose.join.include?("XXXX")
       puts "WIN"
+      true
+    elsif @board.join.include?("OOOO")
+      puts "LOSE"
+      true
     end
   end
-
 end
-
-
-play = ConnectFour.new
-play.display
-play.pass_in_board
-
-
-10.times do
-   play.start_game_player
-   play.format_it
-   play.continue_game_computer
-   play.format_it
-   play.win_vertical
-   play.win_horizontal
-end
-
-
-
-
-
-# play.start_game_player
-# play.format_it
-#
-# play.continue_game_computer
-# play.format_it
-#
-# play.start_game_player
-# play.format_it
-#
-# play.continue_game_computer
-# play.format_it
-#
-#
-# play.start_game_player
-# play.format_it
-# play.continue_game_computer
-# play.format_it
-# play.start_game_player
-# play.format_it
-# play.continue_game_computer
-# play.format_it
