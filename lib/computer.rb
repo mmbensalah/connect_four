@@ -1,8 +1,6 @@
 require './lib/board'
 require './lib/player'
 
-require 'pry'
-
 class Computer
   attr_reader :board
 

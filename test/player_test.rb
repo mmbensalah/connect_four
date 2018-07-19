@@ -6,17 +6,23 @@ require 'pry'
 
 class PlayerTest < Minitest::Test
   def test_it_exists
-    player = Player.new(:board)
+    board = GameBoard.new(board)
+    player = Player.new(board)
+
+    assert_instance_of Player, player
   end
 
   def test_input_move
-    player = Player.new(:board)
+    board = GameBoard.new(board)
+    player = Player.new(board)
+
     assert_equal "B", player.input_move
   end
 
   def test_player_move_index
-    game = GameBoard.new
-    player = Player.new(game)
+    skip
+    board = GameBoard.new(board)
+    player = Player.new(board)
 
     expected = ["B", ".", ".", ".", ".", ".", "."]
     actual = player.player_move_index("B")
@@ -25,8 +31,8 @@ class PlayerTest < Minitest::Test
   end
 
   def test_update_row
-    game = GameBoard.new
-    player = Player.new(game)
+    board = GameBoard.new(board)
+    player = Player.new(board)
 
     expected = ["B", ".", ".", ".", ".", ".", "X"]
     actual = player.update_row(["B", ".", ".", ".", ".", ".", "."])
@@ -34,8 +40,10 @@ class PlayerTest < Minitest::Test
   end
 
   def test_update_board
-    game = GameBoard.new
-    player = Player.new(game)
+    skip
+    board = GameBoard.new(board)
+    player = Player.new(board)
+    player.update_row(["B", ".", ".", ".", ".", ".", "X"])
 
     expected = [["A", ".", ".", ".", ".", ".", "."],
                 ["B", ".", ".", ".", ".", ".", "X"],
@@ -45,7 +53,8 @@ class PlayerTest < Minitest::Test
                 ["F", ".", ".", ".", ".", ".", "."],
                 ["G", ".", ".", ".", ".", ".", "."]]
     actual = player.update_board(["B", ".", ".", ".", ".", ".", "X"])
-    assert_equal expected, actual 
+
+    assert_equal expected, actual
   end
 
 end
