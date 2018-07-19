@@ -2,6 +2,7 @@ require './lib/computer'
 
 class GameBoard
   attr_accessor :board
+  
   def initialize(board)
     @welcome_message = "Welcome to the game"
     @board =   [["A", ".", ".", ".", ".", ".", "."],
@@ -17,11 +18,8 @@ class GameBoard
   end
 
   def format_it
-    @board.transpose.each do |r|
-      puts r.each { |p| p }.join(" ")
+    @board.transpose.each do |row|
+      puts row.each { |p| p }.join(" ")
     end
   end
-
-
-
 end

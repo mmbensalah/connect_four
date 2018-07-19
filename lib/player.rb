@@ -11,7 +11,7 @@ class Player
   end
 
   def input_move #input_move is "B" i.e.
-    puts "Input a capital letter A - G to make a move."
+    puts "Input a capital letter A - G to make a move. DO IT NOW!"
     @player_move = gets.chomp
   end
 
@@ -41,9 +41,4 @@ class Player
   end
   end
 
-  # def format_updated_board
-  #   @board.transpose.each do |space|
-  #     puts space.each { |x| x }.join(" ")
-  #     end
-  # end
 end
