@@ -42,4 +42,21 @@ class ConnectFourTest < Minitest::Test
 
     assert_equal expected, actual
   end
+
+  def test_start_game_player
+    game = ConnectFour.new
+    board = GameBoard.new(board)
+    player = Player.new(board)
+
+    actual = game.start_game_player
+    expected = [["A", "B", "C", "D", "E", "F", "G"],
+                [".", ".", ".", ".", ".", ".", "."],
+                [".", ".", ".", ".", ".", ".", "."],
+                [".", "X", ".", ".", ".", ".", "."],
+                [".", "X", ".", ".", ".", ".", "."],
+                [".", "X", ".", ".", ".", ".", "."],
+                [".", "X", ".", ".", ".", ".", "."]]
+
+    assert_equal expected, actual
+  end
 end

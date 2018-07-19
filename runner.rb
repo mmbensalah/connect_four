@@ -9,8 +9,6 @@ play.pass_in_board
    play.format_it
    play.continue_game_computer
    play.format_it
-   play.win_vertical
-   play.win_horizontal
    if play.win_vertical == true
      break
    end

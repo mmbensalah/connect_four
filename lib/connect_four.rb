@@ -43,20 +43,20 @@ class ConnectFour
 
   def win_vertical
     if @board.join.include?("XXXX")
-      puts "WIN"
+      puts "YOU WIN!"
       true
     elsif @board.join.include?("OOOO")
-      puts "LOSE"
+      puts "YOU LOSE, losah."
       true
     end
   end
 
   def win_horizontal
     if @board.transpose.join.include?("XXXX")
-      puts "WIN"
+      puts "YOU WIN! cool"
       true
-    elsif @board.join.include?("OOOO")
-      puts "LOSE"
+    elsif @board.transpose.join.include?("OOOO")
+      puts "YOU LOSE"
       true
     end
   end
